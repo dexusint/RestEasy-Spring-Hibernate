@@ -6,7 +6,7 @@
 //
 
 
-package in.benchresources.cdm.customer;
+package in.benchresources.cdm.book;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="age" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="bookId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,72 +38,81 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "customerId",
-    "name",
-    "age"
+    "bookId",
+    "author",
+    "title"
 })
-@XmlRootElement(name = "CustomerType")
-public class CustomerType {
+@XmlRootElement(name = "BookType")
+public class BookType {
 
-    protected int customerId;
+    protected int bookId;
     @XmlElement(required = true)
-    protected String name;
-    protected int age;
+    protected String author;
+    @XmlElement(required = true)
+    protected String title;
 
     /**
-     * Gets the value of the customerId property.
+     * Gets the value of the bookId property.
      * 
      */
-    public int getCustomerId() {
-        return customerId;
+    public int getBookId() {
+        return bookId;
     }
 
     /**
-     * Sets the value of the customerId property.
+     * Sets the value of the bookId property.
      * 
      */
-    public void setCustomerId(int value) {
-        this.customerId = value;
+    public void setBookId(int value) {
+        this.bookId = value;
     }
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the author property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getAuthor() {
+        return author;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the author property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setAuthor(String value) {
+        this.author = value;
     }
 
     /**
-     * Gets the value of the age property.
+     * Gets the value of the title property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getAge() {
-        return age;
+    public String getTitle() {
+        return title;
     }
 
     /**
-     * Sets the value of the age property.
+     * Sets the value of the title property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setAge(int value) {
-        this.age = value;
+    public void setTitle(String value) {
+        this.title = value;
     }
 
 }

@@ -5,5 +5,5 @@
 // Generated on: 2016.11.10 at 07:43:09 PM MSK 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://benchresources.in/cdm/Customer", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package in.benchresources.cdm.customer;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://benchresources.in/cdm/Book", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package in.benchresources.cdm.book;
