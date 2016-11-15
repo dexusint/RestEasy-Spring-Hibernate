@@ -38,6 +38,14 @@ public class BookServiceImpl implements IBookService {
 		bookType.setTitle(getBook.getTitle());
 		return bookType;
 	}
+	
+	@Override
+	public String deleteBook(int bookId) {
+
+		Book removeBook = bookDAO.getBook(bookId);
+		return bookDAO.deleteBook(removeBook);
+	}
+
 
 	@Override
 	public String updateBookInfo(BookType bookType) {

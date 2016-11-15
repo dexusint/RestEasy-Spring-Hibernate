@@ -40,7 +40,7 @@ public class BookDAOImpl implements BookDAO	 {
 		Book book = (Book) sessionFactory.getCurrentSession().get(Book.class, bookId);
 		return book;
 	}
-
+	
 	@Override
 	@Transactional
 	public String updateBook(Book book) {

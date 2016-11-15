@@ -21,7 +21,7 @@ public interface IBookService {
 	// http://localhost:8080/RestEasy-Spring-Hibernate/resteasy/bookservice/addbook  - Tomcat 7.0.x
 	// http://localhost:9090/RestEasy-Spring-Hibernate/resteasy/bookservice/addbook  - JBoss AS7
 	@POST
-	@Path("addbook")
+	@Path("book")
 	@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_FORM_URLENCODED})
 	public String createOrSaveNewBookInfo(BookType bookType);
@@ -29,15 +29,21 @@ public interface IBookService {
 	// http://localhost:8080/RestEasy-Spring-Hibernate/resteasy/bookservice/getbook/10001  - Tomcat 7.0.x
 	// http://localhost:9090/RestEasy-Spring-Hibernate/resteasy/bookservice/getbook/10001  - JBoss AS7
 	@GET
-	@Path("getbook/{id}")
+	@Path("book/{id}")
 	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
-	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
 	public BookType getBookInfo(@PathParam("id") int bookId);
+	
+	@DELETE
+	@Path("book/{id}")
+	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
+	@Produces({MediaType.APPLICATION_FORM_URLENCODED})
+	public String deleteBook(@PathParam("id") int bookId);
 
 	// http://localhost:8080/RestEasy-Spring-Hibernate/resteasy/bookservice/updatebook  - Tomcat 7.0.x
 	// http://localhost:9090/RestEasy-Spring-Hibernate/resteasy/bookservice/updatebook  - JBoss AS7
 	@PUT
-	@Path("updatebook")
+	@Path("book")
 	@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_FORM_URLENCODED})
 	public String updateBookInfo(BookType bookType);
@@ -53,8 +59,8 @@ public interface IBookService {
 	// http://localhost:8080/RestEasy-Spring-Hibernate/resteasy/bookservice/getallbook  - Tomcat 7.0.x
 	// http://localhost:9090/RestEasy-Spring-Hibernate/resteasy/bookservice/getallbook  - JBoss AS7
 	@GET
-	@Path("getallbook")
+	@Path("allbooks")
 	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
-	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
 	public BookListType getAllBookInfo();
 }
